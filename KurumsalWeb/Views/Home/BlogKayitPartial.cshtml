@@ -1,0 +1,14 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Blog>
+@using KurumsalWeb.Helper
+<ul class="recent">
+    @foreach (var x in Model)
+    {
+        <li>
+            <img src="@x.ResimURL" class="pull-left" alt="@x.Baslik" />
+            <h6><a href="/Blog/BlogDetay/@x.BlogID">@x.Baslik</a></h6>
+            <p>
+                @Html.Raw(x.Icerik)
+            </p>
+        </li>
+    }
+</ul>

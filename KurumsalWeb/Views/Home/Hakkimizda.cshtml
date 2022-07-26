@@ -1,0 +1,22 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Hakkimizda>
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @foreach (var x in Model)
+            {
+                <h4>Float image in paragraph</h4>
+                <img src="/Content/Onyuz/img/dummies/dummy-1.jpg" class="img-responsive" alt="" />
+                <p>
+                   @Html.Raw(x.Aciklama)
+                </p>
+            }
+        </div>
+       
+        </div>
+</div>
+

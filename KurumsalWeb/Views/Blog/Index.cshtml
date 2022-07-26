@@ -1,0 +1,45 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Blog Listesi</h3>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    });
+</script>
+
+<button class="btn btn-default">@Html.ActionLink("Ekle", "Ekle")</button>
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Kategori</th>
+            <th>ResimURL</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Baslik</td>
+                <td>@x.Kategori.KategoriAd</td>
+                <td width="40%"><img src="@x.ResimURL" width="300" height="200" /></td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id = x.BlogID }) |
+                    @Html.ActionLink("Sil", "Sil", new { id = x.BlogID })
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

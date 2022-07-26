@@ -1,0 +1,91 @@
+﻿<footer>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget">
+
+                    <h5 class="widgetheading">Kurumsal Web Projesi</h5>
+                    <address>
+                        <strong>Açık Adres</strong><br>
+                        @ViewBag.iletisim.Adres
+                    </address>
+                    <p>
+                        <i class="icon-phone">Telefon: @ViewBag.iletisim.Telefon</i> <br>
+                        <i class="icon-envelope-alt">Fax:  @ViewBag.iletisim.Fax</i>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Menü</h5>
+                    <ul class="link-list">
+                        <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                        <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                        <li><a href="/Home/Hizmetler/">Hizmetler</a></li>
+                        <li><a href="/Home/Blog/">Blog</a></li>
+                        <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Son Bloglar</h5>
+                    <ul class="link-list">
+                        @foreach (var x in ViewBag.blog)
+                        {
+                            <li><a href="/Home/BlogDetay/@x.BlogID">@x.Baslik</a></li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Hizmetlerimiz</h5>
+                    <div class="flickr_badge">
+                        @foreach (var k in ViewBag.hizmet)
+                        {
+                            <a href="/Hizmet/HizmetPartial/"><img src="@k.ResimURL" width="150" height="150" /></a>
+                        }
+                        <script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <p>  @DateTime.Now.Year &copy; Tüm hakları saklıdır.</p>
+                        <div class="credits">
+                            <!--
+                              All the links in the footer should remain intact.
+                              You can delete the links only if you purchased the pro version.
+                              Licensing information: https://bootstrapmade.com/license/
+                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
+                            -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="social-network">
+                        <li><a href="https://www.facebook.com/@ViewBag.iletisim.Facebook" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/@ViewBag.iletisim.Twitter" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/@ViewBag.iletisim.Instagram" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</footer>

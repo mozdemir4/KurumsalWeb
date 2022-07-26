@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script type="text/javascript">
+    CKEDITOR.remove('editor')
+</script>
+<h2>Ekle</h2>
+<div class="form">
+    <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Hizmet/Ekle/" enctype="multipart/form-data">
+       
+        <div class="form-group ">
+            <label for="Baslik" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">    
+                <input class="form-control " id="Baslik" min="4" type="text" name="Baslik" required />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="Aciklama" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <textarea name="Aciklama" class="ckeditor" required></textarea>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Resim</label>
+            <div class="col-lg-10">
+                <input  class="form-control " id="curl" type="file" name="ResimURL" accept=".jpg,.png,.jpeg"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">Ekle</button>
+                <a href="~/Hizmet/Index"><button class="btn btn-default" type="button">Vazgeç</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+
